@@ -422,23 +422,6 @@ upf-cpu-load-prediction/
 ├── ai_test_dataset.csv             # 테스트 데이터 (36,000 rows, 5 패턴 × 5일)
 │
 ├── models/                         # 저장된 모델 파일
-│   ├── xgboost_model.pkl           # XGBoost 원본 모델
-│   ├── xgboost_model_fp32.onnx     # ONNX fp32 (권장 배포 모델)
-│   ├── xgboost_model_fp16.onnx     # ONNX fp16 (참고용)
-│   └── optimization_benchmark.csv  # 경량화 벤치마크 수치
-│
-├── images/                         # 전체 출력 그래프
-│   ├── model_comparison_day1.png
-│   ├── model_performance_comparison.png
-│   ├── xgboost_4days_analysis.png
-│   ├── xgboost_pattern_known_0.png
-│   ├── xgboost_pattern_known_3.png
-│   ├── xgboost_pattern_known_7.png
-│   ├── xgboost_pattern_unknown_0.png
-│   ├── xgboost_pattern_unknown_1.png
-│   ├── feature_engineering_comparison.png
-│   ├── day1_feature_comparison.png
-│   └── onnx_optimization_benchmark.png
 │
 ├── run_all_analysis.py                          # 전체 파이프라인 (학습 + 전체 그래프)
 ├── xgboost_feature_engineering_comparison_en.py # Feature engineering 비교
@@ -466,27 +449,4 @@ upf-cpu-load-prediction/
 | 클라우드 | boto3 (AWS S3 / SageMaker) | 1.26+ |
 | 시각화 | matplotlib, seaborn | 3.7+, 0.12+ |
 
----
 
-## 향후 로드맵
-
-| Phase | 내용 | 우선순위 | 상태 |
-|-------|------|----------|------|
-| 1 | 모델 학습 및 평가 | 높음 | ✅ 완료 |
-| 2 | 고도화 Feature Engineering | 높음 | ✅ 완료 |
-| 3 | S3 모델 저장 | 높음 | 📋 예정 |
-| 4 | SageMaker 엔드포인트 배포 | 높음 | 📋 예정 |
-| 5 | 경량 모델 최적화 (ONNX + fp16) | 중간 | 📋 예정 |
-| 6 | Multi-step 예측 (5/10/30분) | 중간 | 📋 예정 |
-| 7 | 실시간 이상 탐지 및 알람 | 높음 | 📋 예정 |
-
----
-
-## 라이센스
-
-Internal Use Only — Company Confidential
-
----
-
-**마지막 업데이트**: 2026-03-23  
-**버전**: 2.0
